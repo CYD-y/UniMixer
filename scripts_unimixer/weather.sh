@@ -1,0 +1,107 @@
+export CUDA_VISIBLE_DEVICES=0
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+
+python -u run.py \
+    --task_name long_term_forecast \
+    --is_training 1 \
+    --root_path dataset/weather/ \
+    --data_path weather.csv \
+    --model_id weather_96 \
+    --model UniMixer \
+    --data custom \
+    --features M \
+    --seq_len 96 \
+    --pred_len 96 \
+    --batch_size 128 \
+    --learning_rate 1e-4 \
+    --enc_in 21 \
+    --dec_in 21 \
+    --c_out 21 \
+    --des 'Exp' \
+    --d_model 32 \
+    --n_heads 2 \
+    --d_ff 128 \
+    --dropout 0.0 \
+    --itr 1 \
+    --lradj type1 \
+    --train_epoch 50 \
+    --patience 3
+
+python -u run.py \
+    --task_name long_term_forecast \
+    --is_training 1 \
+    --root_path dataset/weather/ \
+    --data_path weather.csv \
+    --model_id weather_192 \
+    --model UniMixer \
+    --data custom \
+    --features M \
+    --seq_len 96 \
+    --pred_len 192 \
+    --batch_size 128 \
+    --learning_rate 1e-4 \
+    --enc_in 21 \
+    --dec_in 21 \
+    --c_out 21 \
+    --des 'Exp' \
+    --d_model 32 \
+    --n_heads 2 \
+    --d_ff 128 \
+    --dropout 0.0 \
+    --itr 1 \
+    --lradj type1 \
+    --train_epoch 50 \
+    --patience 3
+
+python -u run.py \
+    --task_name long_term_forecast \
+    --is_training 1 \
+    --root_path dataset/weather/ \
+    --data_path weather.csv \
+    --model_id weather_336 \
+    --model UniMixer \
+    --data custom \
+    --features M \
+    --seq_len 96 \
+    --pred_len 336 \
+    --batch_size 128 \
+    --learning_rate 1e-4 \
+    --enc_in 21 \
+    --dec_in 21 \
+    --c_out 21 \
+    --des 'Exp' \
+    --d_model 32 \
+    --n_heads 2 \
+    --d_ff 128 \
+    --dropout 0.0 \
+    --itr 1 \
+    --lradj type1 \
+    --train_epoch 50 \
+    --patience 3
+
+python -u run.py \
+    --task_name long_term_forecast \
+    --is_training 1 \
+    --root_path dataset/weather/ \
+    --data_path weather.csv \
+    --model_id weather_720 \
+    --model UniMixer \
+    --data custom \
+    --features M \
+    --seq_len 96 \
+    --pred_len 720 \
+    --batch_size 128 \
+    --learning_rate 1e-4 \
+    --enc_in 21 \
+    --dec_in 21 \
+    --c_out 21 \
+    --des 'Exp' \
+    --d_model 32 \
+    --n_heads 4 \
+    --d_ff 128 \
+    --dropout 0.0 \
+    --itr 1 \
+    --lradj type3 \
+    --train_epoch 50 \
+    --patience 3 \
+    --e_layers 4
